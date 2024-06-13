@@ -12,7 +12,12 @@
    Open your terminal or command prompt and run:
    ```sh
     pip install -r requirements.txt
+    ```
 
+
+
+
+## RUN
 **Run the Script**:
     1. Clone the repository or download the test script.
     2. Navigate to the directory containing the test script:
