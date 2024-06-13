@@ -87,7 +87,26 @@ class APITestCase(unittest.TestCase):
 
     def test_trigger_division_by_zero_error(self):
         response = requests.get(f"{BASE_URL}/sentry")
-        self.assertEqual(response.status_code, 500)
+        print("Response Status Code:", response.status_code)
+        print("Response Headers:", response.headers)
+        print("Response Text:", response.text)
+        
+        self.assertEqual(response.status_code, 500, f"Expected status code 500, but got {response.status_code}")
+        
+        # Check if the content type is JSON
+        content_type = response.headers.get('Content-Type')
+        if content_type and 'application/json' in content_type:
+            try:
+                response_json = response.json()
+                print(response_json)
+                self.assertIsInstance(response_json, dict)
+            except ValueError:
+                self.fail("Expected JSON response but could not parse JSON")
+        else:
+            # Check for non-JSON response with specific error text
+            self.assertTrue(response.text.strip() == "", "Expected error message in the response")
+
+
 
     def test_get_drones(self):
         response = requests.get(f"{BASE_URL}/drones")

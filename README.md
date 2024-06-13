@@ -15,14 +15,14 @@
     ```
 
 
-
-
-## RUN
+## Run
 **Run the Script**:
     1. Clone the repository or download the test script.
     2. Navigate to the directory containing the test script:
         ```sh
         cd path/to/your/test/directory
+        ```
     3. Run the tests:
         ```sh
         python test_api.py
+        ```
