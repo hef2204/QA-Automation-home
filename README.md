@@ -1,7 +1,7 @@
 # QA Automation Home Assignment
 
 ## Requirements
-
+- `python` 3.11.1
 - `requests` library
 - `jsonschema` library
 - `unittest` library (part of the standard library)

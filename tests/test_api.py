@@ -112,7 +112,7 @@ class APITestCase(unittest.TestCase):
         response = requests.get(f"{BASE_URL}/drones")
         self.assertEqual(response.status_code, 200)
         response_json = response.json()
-        print(response_json)  # Debugging line
+        print(response_json) 
         self.assertIsInstance(response_json, list)
         for drone in response_json:
             validate_json(drone, drone_schema)
